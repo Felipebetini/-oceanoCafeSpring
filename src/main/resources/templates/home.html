@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
         <title>Oceano Café</title>
 
-        <link rel="stylesheet" href="css/style.css" />
-        <script src="js/main.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" th:href="@{/css/style.css}" />
+        <script th:src="@{/js/main.js}"></script>
+        <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
 
         <link
         rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css}"
         integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
         crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
-        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"> 
-        <link href="https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <link rel="stylesheet" th:href="@{https://unpkg.com/flickity@2/dist/flickity.min.css}"/>
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Special+Elite&display=swap}" rel="stylesheet"> 
+        <link th:href="@{https://fonts.googleapis.com/css2?family=Charm:wght@700&display=swap}" rel="stylesheet"> 
+        <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css}"/>
         
     </head>
 
@@ -30,7 +30,7 @@
             <section id="home">
                 <div class="row">
                 <div class=" divImgLogo col-6">
-                    <img src="./img/logoOceanoCafe.jpeg" class="imgLogo"/>
+                    <img th:src="@{./img/logoOceanoCafe.jpeg}" class="imgLogo"/>
                 </div>
                 <!--Logo-->
                 <div class=" logo col-6"> 
@@ -117,15 +117,15 @@
                 <h1 class="carouselH1" >Escolha a sua experiencia</h1>
                 <div class="main-carousel">
                     <div class="carousel-cell">
-                        <a href="/clientes/cadastrar"><img src="./img/cafePacote.png" /></a>
+                        <a th:href="@{./clientes/pedido}"><img th:src="@{./img/cafePacote.png}" /></a>
                         <p style="color: white;">Catuai Vermelho </br> R$25,00</p>
                     </div>
                     <div class="carousel-cell">
-                        <a href="/clientes/cadastrar"><img src="./img/cafePacote.png" /></a>
+                        <a th:href="@{./clientes/pedido}"><img th:src="@{./img/cafePacote.png}" /></a>
                         <p style="color: white;">Catuai Vermelho </br> R$25,00</p>
                     </div>
                     <div class="carousel-cell">
-                        <a href="/clientes/cadastrar"><img src="./img/cafePacote.png" /></a>
+                        <a th:href="@{./clientes/pedido}"><img th:src="@{./img/cafePacote.png}" /></a>
                         <p style="color: white;">Catuai Vermelho </br> R$25,00</p>
                     </div>
                 </div>
@@ -168,21 +168,21 @@
                         <input type="submit" value="Submit" class="btnSubmit" >
                         <div class="container-fluid" id="redesSociais">
                             <p class='pRedes'>Nos visite tambem!</p>       
-                            <a href="#" target="_blank"><img class="imgRedesFacebook" src="./img/facebook.png" ></a>
-                            <a href="#" target="_blank"><img class="imgRedesInstagram" src="./img/instagram.png" ></a>
+                            <a th:href="@{#}" target="_blank"><img class="imgRedesFacebook" th:src="@{./img/facebook.png}" ></a>
+                            <a th:href="@{#}" target="_blank"><img class="imgRedesInstagram" th:src="@{./img/instagram.png}" ></a>
                         </div>
                     </form>
                 </div>
                 
                 <div>
-                    <a href="#home" class="to-top"></a>
-                    <a href="/admin/logar" class="loginAdm">Adm</a>
+                    <a th:href="@{#home}" class="to-top"></a>
+                    <a th:href="@{./admin/login}" class="loginAdm">Adm</a>
                 </div>
             </section>
         </div>
         
         
-        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+        <script th:src="@{https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js}"></script>
         <script type="text/javascript">
         $('selector').flickity()
         $(".main-carousel").flickity({

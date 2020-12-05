@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos do Mercado</title>
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" th:href="@{/bootstrap-4.5.2/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/fontawesome-5.14.0/css/all.css}">
+	
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	  <a class="navbar-brand" th:href="@{/}">
+	  	<i class="fas fa-home"></i> Produtos do Mercado
+	  </a>
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	      <li class="nav-item active">
+	        <a class="nav-link" th:href="@{/produto/list}">Produtos</a>
+	      </li>
+	    </ul>
+	  </div>
+	</nav>
+	
+	<div class="container container-produtos">
+			<div class="alert alert-dark bg-dark div-titulo">
+				<h3>Produtos</h3>
+			</div>
+			
+			<div class="div-btn-novo">
+				<button type="button" class="btn btn-outline-success"
+					th:onclick="window.location.href='./add'">
+					<i class="fas fa-plus-circle"></i> Novo
+				</button>
+			</div>
+			
+			<div>
+				<table class="table">
+					<thead class="table-dark">
+						<tr>
+							<th>Código</th>
+							<th>Nome</th>
+							<th>Descrição</th>
+							<th colspan="4">Preço</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="produto: ${allProdutos}">
+							<td th:text="${produto.id}"></td>
+							<td th:text="${produto.nome}"></td>
+							<td th:text="${produto.descricao}"></td>
+							<td th:text="${'R$ ' + #numbers.formatDecimal(produto.preco, 1, 2)}"></td>
+							<td><a class="link-basico"  th:href="@{'/produto/view/' + ${produto.id}}"><i class="fas fa-eye"></i> </a></td>
+							<td><a class="link-basico"  th:href="@{'/produto/edit/' + ${produto.id}}"><i class="fas fa-edit"></i> </a></td>
+							<td><a class="link-deletar" th:href="@{'/produto/delete/' + ${produto.id}}"><i class="fas fa-trash-alt"></i> </a></td>
+						</tr>
+					
+					</tbody>
+				</table>
+			</div>
+		
+	</div>
+	
+	
+	
+	<!-- JS -->
+	<script type="text/javascript" th:src="@{/js/jquery-3.5.1.min.js}"></script>
+	<script type="text/javascript" th:src="@{/bootstrap-4.5.2/js/bootstrap.min.js}"></script>
+
+</body>
+</html>

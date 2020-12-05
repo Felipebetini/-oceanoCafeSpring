@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminController {
 	@GetMapping("/cadastrar")
 	public String cadastrar() {
-		return "/admin/cadastro";
+		return "/adm/cadastro";
 	}
 	
-	@GetMapping("/logar")
-	public String logar() {
-		return "/admin/loginAdm";
+	@GetMapping("/login")
+	public String login() {
+		return "/adm/loginAdm";
+	}
+	@GetMapping("dashboard")
+	public String dashboard() {
+		return "adm/dashBoard";
 	}
 }

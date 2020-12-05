@@ -7,13 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/clientes")
 public class ClienteController {
-	@GetMapping("/cadastrar")
-	public String cadastrar() {
-		return "/cliente/cadastro";
-	}
-	
-	@GetMapping("/logar")
-	public String logar() {
-		return "/cliente/login";
+	@GetMapping("/pedido")
+	public String pedido() {
+		return "/cliente/pedido";
 	}
 }
