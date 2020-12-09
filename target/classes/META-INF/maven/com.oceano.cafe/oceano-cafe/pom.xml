@@ -12,7 +12,7 @@
 	<artifactId>oceano-cafe</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>oceano-cafe</name>
-	<description>Oceano Cafe application</description>
+	<description>Site Oceano Cafe</description>
 
 	<properties>
 		<java.version>15</java.version>

@@ -1,4 +1,4 @@
-package com.oceano.cafe;
+package com.oceano.cafe.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

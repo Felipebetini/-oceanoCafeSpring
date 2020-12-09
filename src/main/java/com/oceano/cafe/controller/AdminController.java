@@ -20,4 +20,5 @@ public class AdminController {
 	public String dashboard() {
 		return "adm/dashBoard";
 	}
+	
 }

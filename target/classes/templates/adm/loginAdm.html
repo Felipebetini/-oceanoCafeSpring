@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="styleSheet" th:href="@{../css/loginAdm.css}" />
     <title>Adm</title>
-    <script th:src="@{../js/loginAdm.js}"></script>
+    
     <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     
     
@@ -17,10 +17,10 @@
     <div class="container divLogin ">
       
       <h2 class="container-fluid hLogin">Faca seu login</h2>
-      <form class="form"  onsubmit="return false">
+      <form class="form">
         <input type="text" id="usuario" placeholder="Usuario">
         <input type="password" id="senha" placeholder="Senha">
-        <a th:href="@{./admin/dashboard}"><button type="submit" id="login-button">Login</button></a>
+        <a th:href="@{./produto/index}"><button  id="login-button">Login</button></a>
         <div>
         <a th:href="@{../home}">voltar</a>
     </div>
